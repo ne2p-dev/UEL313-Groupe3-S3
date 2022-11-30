@@ -12,6 +12,10 @@ $app->match('/tag/{id}', "Watson\Controller\HomeController::tagAction")->bind('t
 // Login form
 $app->get('/login', "Watson\Controller\HomeController::loginAction")->bind('login');
 
+// Link to RSS
+$app->get('/rss', "Watson\Controller\HomeController::rssAction")->bind('rss');
+
+
 // Admin zone
 $app->get('/admin', "Watson\Controller\AdminController::indexAction")->bind('admin');
 

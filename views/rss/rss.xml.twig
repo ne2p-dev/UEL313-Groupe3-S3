@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Watson</title>
+        <link>{{ app.request.getUri() }}</link>
+        <description>Flux RSS 2.0 des liens Watson</description>
+        <language>FR</language>
+        {% for link in links %}
+        <item>
+            <title>{{ link.title }}</title>
+            <description>{{ link.desc }}</description>
+            <url>{{ link.url }}</url>
+            <author>{{ link.user.username }}</author>
+            {% for tag in link.tags %}
+                <category>{{ tag.title }}</category>
+            {% endfor %}
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

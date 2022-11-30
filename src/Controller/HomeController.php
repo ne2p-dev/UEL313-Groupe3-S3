@@ -4,6 +4,7 @@ namespace Watson\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController {
 
@@ -15,6 +16,20 @@ class HomeController {
     public function indexAction(Application $app) {
         $links = $app['dao.link']->findAll();
         return $app['twig']->render('index.html.twig', array('links' => $links));
+    }
+
+    /**
+     * RSS page controller.
+     *
+     * @param Application $app Silex application
+     */
+    public function rssAction(Application $app) {
+        $links = $app['dao.link']->findAll();
+        $response = new Response (
+            $app['twig']->render('rss/rss.xml.twig', array('links' => $links))
+        );
+        $response->headers->set('Content-Type', 'text/xml');
+        return $response;
     }
 
     /**
