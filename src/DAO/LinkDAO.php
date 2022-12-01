@@ -47,6 +47,29 @@ class LinkDAO extends DAO
     }
 
     /**
+     * Return a list of the twelve last links, sorted by date (most recent first).
+     *
+     * @return array A list of all links.
+     */
+    public function findAllTwelve() {
+        $sql = "
+            SELECT * 
+            FROM tl_liens 
+            ORDER BY lien_id DESC
+            LIMIT 12
+        ";
+        $result = $this->getDb()->fetchAll($sql);
+
+        // Convert query result to an array of domain objects
+        $_links = array();
+        foreach ($result as $row) {
+            $linkId          = $row['lien_id'];
+            $_links[$linkId] = $this->buildDomainObject($row);
+        }
+        return $_links;
+    }
+
+    /**
      * Returns a link matching the supplied id.
      *
      * @param integer $id The link id.

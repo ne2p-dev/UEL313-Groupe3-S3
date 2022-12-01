@@ -14,8 +14,18 @@ class HomeController {
      * @param Application $app Silex application
      */
     public function indexAction(Application $app) {
-        $links = $app['dao.link']->findAll();
+        $links = $app['dao.link']->findAllTwelve();
         return $app['twig']->render('index.html.twig', array('links' => $links));
+    }
+
+    /**
+     * All links page controller.
+     *
+     * @param Application $app Silex application
+     */
+    public function allLinksAction(Application $app) {
+        $links = $app['dao.link']->findAll();
+        return $app['twig']->render('links.html.twig', array('links' => $links));
     }
 
     /**
@@ -24,7 +34,7 @@ class HomeController {
      * @param Application $app Silex application
      */
     public function rssAction(Application $app) {
-        $links = $app['dao.link']->findAll();
+        $links = $app['dao.link']->findAllTwelve();
         $response = new Response (
             $app['twig']->render('rss/rss.xml.twig', array('links' => $links))
         );
