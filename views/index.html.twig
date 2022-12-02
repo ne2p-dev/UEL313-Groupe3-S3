@@ -1,21 +1,31 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}LAST 12 LINKS{% endblock %}
 
 {% block content %}
+	<h2 class="titleHome">{{ block('title') }} <span class="glyphicon glyphicon-folder-open"></span></h2>
 	<div class="row">
 		{% for link in links %}
 			<div class="col-md-4">
-			    <h2><a class="linkTitle" href="{{ path('link', { 'id': link.id }) }}">{{ link.title }}</a></h2>
-			    <p>{{ link.desc }}</p>
-			    <a href="{{ link.url }}" title="" target="_blank">Open ></a>
-			    <em>(by {{ link.user.username }})</em>
-
-			    {% for tag in link.tags %}
-			    	<a href="{{ path('tag', { 'id': tag.id }) }}" title="Filtrer">
-			    		{{ tag.title }}
-			    	</a>
-			    {% endfor %}
+				<div class="thumbnail">
+					<div class="caption">
+						<h2><a class="linkTitle linkTitleHome" href="{{ path('link', { 'id': link.id }) }}">{{ link.title }}</a></h2>
+						<p>{{ link.desc }}</p>
+						<div>
+							<p><a href="{{ link.url }}" title="" target="_blank" class="btn btn-primary" role="button">Open</a></p>
+							<div class="card_information">
+								<p>Add by <em>{{ link.user.username }}</em></p>
+								<p>
+								{% for tag in link.tags %}
+									<a href="{{ path('tag', { 'id': tag.id }) }}" title="Filtrer" class="label label-info">
+										{{ tag.title }}
+									</a>
+								{% endfor %}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		{% endfor %}
 	</div>

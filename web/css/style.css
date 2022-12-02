@@ -1,22 +1,12 @@
 body { 
-    padding-top: 100px; 
-}
-
-#logo{
-	width:230px;
-	height: 0;
-	display: block;
-	overflow: hidden;
-	padding-top: 76px;
-	font-size: 0;
-	background: url("../images/logo.png") no-repeat center center;
+    padding-top: 130px; 
 }
 
 .footer {
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+    border-top: solid 2px #060000;
+    padding: 10px 0;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 1.4rem;
 }
 
 .articleTitle:hover, .articleTitle:focus {
@@ -32,3 +22,14 @@ body {
     padding-top: 30px;
     padding-bottom: 10px;
 }
+
+/* deleted code
+#logo{
+	width:230px;
+	height: 0;
+	display: block;
+	overflow: hidden;
+	padding-top: 76px;
+	font-size: 0;
+	background: url("../images/logo.png") no-repeat center center;
+}*/
