@@ -2,7 +2,7 @@ $(function () {
     let container = $('#users-pagination');
     container.pagination({
         dataSource: users,
-        pageSize: 1,
+        pageSize: 10,
         autoHidePrevious: true,
         autoHideNext: true,
         callback: function (data, pagination) {
@@ -10,7 +10,7 @@ $(function () {
 
             $.each(data, function (index, item) {
                 dataHtml += '<tr>';
-                dataHtml +=     '<td>' + item.username + '</td>';
+                dataHtml +=     '<td class="titleUsers">' + item.username + '</td>';
                 dataHtml +=     '<td>';
                 dataHtml +=         '<a href="/admin/user/' + item.id + '/edit" class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>';
                 dataHtml +=         '<button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal" data-target="#userDialog' + item.id +'"><span class="glyphicon glyphicon-remove"></span>';

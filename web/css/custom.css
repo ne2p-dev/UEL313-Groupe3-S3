@@ -79,6 +79,27 @@
         color: #060000;
         padding-bottom: 5px;
     }
+    .titleUsers {
+        font-weight: 600;
+    }
+    .titleLinksAdmin {
+        font-weight: 600;
+        color: #41384a;
+    }
+    .titleLinksAdmin:hover {
+        text-decoration: none;
+        color: #41384a;
+        border-bottom: solid 2px #060000;
+    }
+    .titleNameLinks {
+        font-weight: 600;
+        color: #41384a !important;
+    }
+    .titleNameLinks:hover {
+        text-decoration: none;
+        color: #41384a;
+        border-bottom: solid 2px #060000;
+    }
 
 /* card */
     .thumbnail {
@@ -128,6 +149,19 @@
         background: #41384a !important;
         color: #ffffff !important;
     }
+    .btn-primary2 {
+        background: #41384a;
+        color: #ffffff;
+        transition: .4s;
+    }
+    .btn-primary2:hover {
+        background: #ffffff !important;
+        color: #41384a !important;
+        box-shadow: 5px 5px 5px #aaaaaa;
+    }
+    .edit-btnSave:hover {
+        box-shadow: 5px 5px 5px #aaaaaa;
+    }
 
 
 /* form login */
@@ -147,4 +181,32 @@
     .formLogin input:focus {
         box-shadow: none;
         border-color: #fad8d3;
+    }
+
+/* Button admin */
+    .btn_linksAdmin a {
+        margin: 20px 20px;
+        box-shadow: 0px 5px 5px #aaaaaa;
+        font-weight: bolder;
+        background-color: #41384a;
+        color: #ffffff;
+        border-radius: 20px!important;
+    }
+
+    .btn_linksAdmin:hover a:hover {
+        box-shadow: 5px 5px 5px #aaaaaa;
+        background-color: #ffffff;
+        color: #41384a;
+    }
+
+/* table Links Admin*/
+    .tableLinksAdmin {
+        margin-top: 20px;
+    }
+
+/* Edit */
+    .editLinks {
+        margin-top: 20px;
+        border: solid 3px #41384a;
+        border-radius: 20px;
     }

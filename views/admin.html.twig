@@ -29,17 +29,17 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="#links" data-toggle="tab" id="button-links">Links</a></li>
-            <li><a href="#users" data-toggle="tab" id="button-users">Users</a></li>
+            <li class="btn_linksAdmin active"><a href="#links" data-toggle="tab" id="button-links">Links</a></li>
+            <li class="btn_linksAdmin"><a href="#users" data-toggle="tab" id="button-users">Users</a></li>
         </ul>
     </div>
 </div>
 <div class="tab-content">
     <div class="tab-pane fade in active adminTable" id="links">
-        <a href="{{ path('admin_link_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add link</button></a>
+        <a href="{{ path('admin_link_add') }}"><button type="button" class="btn btn-primary2"><span class="glyphicon glyphicon-plus"></span> Add link</button></a>
         {% if links %}
-        <div class="table-responsive">
-            <table class="table table-hover table-condensed">
+        <div class="table-responsive tableLinksAdmin">
+            <table class="table table-hover table-condensed table-striped">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -60,9 +60,9 @@
     </div>
 
     <div class="tab-pane fade adminTable" id="users">
-        <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add user</button></a>
+        <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary2"><span class="glyphicon glyphicon-plus"></span> Add user</button></a>
         {% if users %}
-        <div class="table-responsive">
+        <div class="table-responsive tableLinksAdmin">
             <table class="table table-hover table-condensed">
                 <thead>
                     <tr>

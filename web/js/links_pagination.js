@@ -2,15 +2,15 @@ $(function () {
     let container = $('#links-pagination');
     container.pagination({
         dataSource: links,
-        pageSize: 1,
+        pageSize: 10,
         autoHidePrevious: true,
         autoHideNext: true,
         callback: function (data, pagination) {
             var dataHtml = '<ul>';
 
             $.each(data, function (index, item) {
-                dataHtml += '<tr>';
-                dataHtml +=     '<td><a class="linkTitle" href="/link/' + item.id + '">' + item.title + '</a></td>';
+                dataHtml += '<tr class="tableLinksAdmin">';
+                dataHtml +=     '<td><a class="linkTitle titleLinksAdmin" href="/link/' + item.id + '">' + item.title + '</a></td>';
                 dataHtml +=     '<td>' + item.username + '</td>';
                 dataHtml +=     '<td>' + item.desc.substr(0, 60) + '</td>';
                 dataHtml +=     '<td>';
