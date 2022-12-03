@@ -5,20 +5,24 @@
 
 {% block content %}
 
+{# Creation of the array holding the information relating to the links #}
 {% set linksJSON = [] %}
 {% for link in links %}
     {% set linksJSON = linksJSON|merge([{"id" : link.id, "title" : link.title, "username" : link.user.username, "desc" : link.desc}]) %}
 {% endfor %}
 
+{# Creation of the array holding the information relating to the users #}
 {% set usersJSON = [] %}
 {% for user in users %}
     {% set usersJSON = usersJSON|merge([{"id" : user.id, "username" : user.username}]) %}
 {% endfor %}
 
- <script>
+{# {{ array | json_encode | raw }} => convert array to JSON #}
+<script type="text/javascript">
+    /* Parsing the JSON data and making it available to JavaScript. */
     let links = JSON.parse('{{ linksJSON | json_encode | raw }}');
     let users = JSON.parse('{{ usersJSON | json_encode | raw }}');
- </script>
+</script>
 
 <h2 class="text-center">{{ block('title') }}</h2>
 {% for flashMessage in app.session.flashbag.get('success') %}

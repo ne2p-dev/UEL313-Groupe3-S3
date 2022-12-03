@@ -1,13 +1,24 @@
 $(function () {
+    
+    /* HTML block in which the pagination will be displayed. */
     let container = $('#links-pagination');
+
+    /* A pagination plugin for jQuery. */
     container.pagination({
+
+        /* The pagination plugin configuration. */
         dataSource: links,
         pageSize: 10,
         autoHidePrevious: true,
         autoHideNext: true,
-        callback: function (data, pagination) {
-            var dataHtml = '<ul>';
 
+        /* A callback function that is called when the pagination is initialized. */
+        callback: function (data, pagination) {
+
+            /* Variable to return. */
+            var dataHtml = '';
+
+            /* A loop that iterates over the data and creates a table row for each item. */
             $.each(data, function (index, item) {
                 dataHtml += '<tr class="tableLinksAdmin">';
                 dataHtml +=     '<td><a class="linkTitle titleLinksAdmin" href="/link/' + item.id + '">' + item.title + '</a></td>';
@@ -38,8 +49,7 @@ $(function () {
                 dataHtml += '</tr>';
             });
 
-            dataHtml += '</ul>';
-
+            /* Replacing the content of the `#links-container` element with the `dataHtml` variable. */
             $("#links-container").html(dataHtml);
         }
     })

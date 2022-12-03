@@ -3,7 +3,7 @@
 // Home page
 $app->get('/', "Watson\Controller\HomeController::indexAction")->bind('home');
 
-// Home page
+// All links page
 $app->get('/link', "Watson\Controller\HomeController::allLinksAction")->bind('all_links');
 
 // Detailed info about a link
